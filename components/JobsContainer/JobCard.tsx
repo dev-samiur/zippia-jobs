@@ -7,7 +7,7 @@ import { IJob } from '../../types/interfaces'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 350,
+  width: 350,
 	height: 280,
 	cursor: 'pointer',
   },
