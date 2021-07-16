@@ -4,7 +4,7 @@ import Header from '../../components/header';
 import JobsContainer from '../../components/JobsContainer'
 import { IJob } from '../../types/interfaces'
 
-const Jobs: React.FC<IJob> = ({ jobs }) => (
+const Jobs: React.FC<{jobs: IJob}> = ({ jobs }) => (
 	<div>
 		<Header/>
 		<JobsContainer jobs={jobs} />

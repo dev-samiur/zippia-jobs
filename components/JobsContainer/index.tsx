@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { IJob } from '../../types/interfaces'
+import JobCard from './JobCard'
 
 
-const JobsContainer: React.FC<IJob> = ({jobs}) => {
-	const [count, setCount] = useState(1)
-	useEffect(() => {
-		setCount(2)
-		console.log(jobs)
-	}, [jobs])
-	return (
+const JobsContainer: React.FC<{jobs: IJob}> = ({jobs}) => (
 		<div>
-			{count}
+			<JobCard job={jobs} />
 		</div>
 	)
-}
 
 export default JobsContainer;
