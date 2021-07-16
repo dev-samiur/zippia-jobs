@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Card, CardContent } from '@material-ui/core';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import EcoIcon from '@material-ui/icons/Eco';
 import TextTruncate from 'react-text-truncate';
 import { IJob } from '../../types/interfaces'
 
@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
 	width: 80,
 	marginBottom: 5,
 	background: theme.palette.primary.main
+  },
+  icon: {
+	  color: '#FFF'
   }
 }));
 
@@ -32,7 +35,7 @@ const JobCard: React.FC<{job: IJob}> = ({ job }) => {
     <Card className={classes.root}>
       <CardContent>
 	  	<div className={classes.companyLogo}>
-			<ShoppingCartIcon />
+			<EcoIcon fontSize="large" className={classes.icon} />
 		</div>
         <Typography variant="h6" component="h2" color="secondary">
           { job.jobTitle }

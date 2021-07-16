@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios'
 import Header from '../../components/header';
-import JobsContainer from '../../components/JobsContainer'
-import { IJob } from '../../types/interfaces'
+import JobsContainer from '../../components/JobsContainer';
+import Footer from '../../components/Footer';
+import { IJob } from '../../types/interfaces';
 
 const Jobs: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => (
 	<div>
 		<Header/>
 		<JobsContainer jobs={jobs} />
+		<Footer />
 	</div>
 )
 
