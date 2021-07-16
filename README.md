@@ -1,7 +1,8 @@
-# Next.js starter
-A simple Next.js starter kit with Typescript, Material UI, Jest and react-testing-library.
+# Zippia Jobs
+Single page job explorer app fetches jobs using Zippia api
 
 ## Features
+- 🚀 Fetch jobs using [Zippia](https://www.zippia.com/)
 - ▲ Based on latest [Next.js](https://github.com/zeit/next.js)
 - 🚄 Typescript [Typescript](https://github.com/microsoft/TypeScript)
 - 💅 Styling with [material-ui](https://github.com/mui-org/material-ui)
@@ -9,7 +10,7 @@ A simple Next.js starter kit with Typescript, Material UI, Jest and react-testin
 
 ## Getting started
 ```
-git clone https://github.com/dev-samiur/next-typescript-mui-starter my-project
+git clone https://github.com/dev-samiur/zippia-jobs
 cd my-project
 yarn install
 yarn dev
