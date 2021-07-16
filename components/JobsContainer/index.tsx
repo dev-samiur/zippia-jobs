@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles , useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Container, Typography, Grid } from '@material-ui/core';
 import JobCard from './JobCard';
+import DateSelect from './DateSelect';
 import { IJob } from '../../types/interfaces';
 
 const useStyles = makeStyles({
@@ -21,9 +22,21 @@ const useStyles = makeStyles({
 
 const JobsContainer: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => {
 	const [jobItems, setJobItems]= useState(jobs);
+	const [jobPostDate, setJobPostDate]= useState('all');
 	const classes = useStyles();
 	const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
+	const handleJobPostDate = (postDate: string) => {
+		setJobPostDate(postDate)
+
+		if( postDate === 'all') {
+			setJobItems(jobs)
+		}
+		else {
+			setJobItems( jobs.filter( job => parseInt( job.postedDate.replace( /[^0-9]/g,'' ), 10 ) <= 1 ) )
+		}
+	}
 
 	return (
 		<Container maxWidth="lg" className={classes.root}>
@@ -49,7 +62,9 @@ const JobsContainer: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => {
 						spacing={3}
 					>
 						<Grid item>One</Grid>
-						<Grid item>Two</Grid>
+						<Grid item>
+							<DateSelect date={jobPostDate} handleJobPostDate={handleJobPostDate} />
+						</Grid>
 					</Grid>
 				</Grid>
 			</Grid>
@@ -60,7 +75,7 @@ const JobsContainer: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => {
   				alignItems="center"
 			>
 				{
-					jobs.slice(0,10).map( (job: IJob) => (
+					jobItems.slice(0,10).map( (job: IJob) => (
 						<Grid item key={job.jobId}>
 							<JobCard key={job.jobId} job={job} />
 						</Grid>
