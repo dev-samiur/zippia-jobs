@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
 		<Head>
 			<meta
 				name="Description"
-				content="Simple starter boilerplate for nextjs"
+				content="Job search app uses Zippia api"
 			/>
 			<link
 				rel="stylesheet"
