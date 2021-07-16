@@ -14,6 +14,6 @@ const Header: React.FC = () => (
 			</Typography>
 		</div>
 	</div>
-	)
+)
 
 export default Header;
