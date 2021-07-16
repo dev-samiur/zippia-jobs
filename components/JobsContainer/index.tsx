@@ -28,7 +28,7 @@ const JobsContainer: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => {
 
 	const classes = useStyles();
 	const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
 	const handleJobPostDate = (postDate: string) => {
 		setJobPostDate(postDate);
