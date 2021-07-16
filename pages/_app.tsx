@@ -3,6 +3,7 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from "../config/theme";
 
 export default class MyApp extends App {
@@ -28,6 +29,7 @@ export default class MyApp extends App {
           <meta name="theme-color" content={theme.palette.primary.main} />
         </Head>
         <ThemeProvider theme={theme}>
+		  <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
       </>

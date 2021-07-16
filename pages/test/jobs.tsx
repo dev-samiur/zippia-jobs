@@ -3,7 +3,7 @@ import { Container } from '@material-ui/core';
 import Header from '../../components/header';
 
 const jobs: React.FC = () => (
-		<div style={{margin: -8}}>
+		<div>
 			<Header/>
 		</div>
 	)
