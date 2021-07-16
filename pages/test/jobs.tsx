@@ -1,11 +1,38 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import axios from 'axios'
 import Header from '../../components/header';
+import JobsContainer from '../../components/JobsContainer'
+import { IJob } from '../../types/interfaces'
 
-const jobs: React.FC = () => (
-		<div>
-			<Header/>
-		</div>
-	)
+const Jobs: React.FC<IJob> = ({ jobs }) => (
+	<div>
+		<Header/>
+		<JobsContainer jobs={jobs} />
+	</div>
+)
 
-export default jobs
+export const getStaticProps = async () => {
+	const payload = {
+		companySkills: true,
+		dismissedListingHashes: [],
+		fetchJobDesc: true,
+		jobTitle: 'Business Analyst',
+		locations: [],
+		numJobs: 20,
+		previousListingHashes: [],
+	}
+
+	const res = await axios({
+		url: 'https://www.zippia.com/api/jobs/',
+		method: 'POST',
+		data: payload
+	})
+
+	return {
+		props: {
+		  jobs: res.data.jobs,
+		},
+	}
+}
+
+export default Jobs
