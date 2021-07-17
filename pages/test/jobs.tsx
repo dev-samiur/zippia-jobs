@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 import axios from 'axios'
-import Header from '../../components/header';
-import JobsContainer from '../../components/JobsContainer';
-import Footer from '../../components/Footer';
-import { IJob } from '../../types/interfaces';
+import Header from '../../components/header'
+import JobsContainer from '../../components/JobsContainer'
+import Footer from '../../components/Footer'
+import { IJob } from '../../types/interfaces'
 
-const Jobs: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => (
+const Jobs: React.FC<{ jobs: Array<IJob> }> = ({ jobs }) => (
 	<div>
-		<Header/>
+		<Header />
 		<JobsContainer jobs={jobs} />
 		<Footer />
 	</div>
@@ -27,12 +27,12 @@ export const getStaticProps = async () => {
 	const res = await axios({
 		url: 'https://www.zippia.com/api/jobs/',
 		method: 'POST',
-		data: payload
+		data: payload,
 	})
 
 	return {
 		props: {
-		  jobs: res.data.jobs,
+			jobs: res.data.jobs,
 		},
 	}
 }
