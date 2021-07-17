@@ -30,6 +30,8 @@ const JobsContainer: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => {
 	const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
+	// Filter jobs by date posted
+
 	const handleJobPostDate = (postDate: string) => {
 		setJobPostDate(postDate);
 
@@ -44,6 +46,8 @@ const JobsContainer: React.FC<{jobs: Array<IJob>}> = ({ jobs }) => {
 			setJobItems( jobPostedLastWeek );
 		}
 	}
+
+	// Filter jobs by company
 
 	const handleSearch = (searchVal: string | null) => {
 		setJobFilterSearch(searchVal);

@@ -23,6 +23,8 @@ interface IDateSelect {
 const DateSelect: React.FC<IDateSelect> = ({ date, handleJobPostDate }) => {
 	const classes = useStyles();
 
+	// Handle change in job date posted by emitting event
+
 	const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
 		handleJobPostDate(event.target.value as string);
 	};

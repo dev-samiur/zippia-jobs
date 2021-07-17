@@ -11,6 +11,8 @@ interface ISearch {
 
 const Search: React.FC<ISearch> = ({ jobs, handleSearch }) => {
 
+	// Handle change in job search box by emitting event
+	
 	const handleChange = (value: any) => {
 		handleSearch(value ? value.companyName : null);
 	};
