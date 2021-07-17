@@ -25,6 +25,7 @@ const Search: React.FC<ISearch> = ({ jobs, handleSearch }) => {
 			onChange={(event: any, value: any) => handleChange(value)}
 			// eslint-disable-next-line react/jsx-props-no-spreading
 			renderInput={(params) => (
+				// eslint-disable-next-line react/jsx-props-no-spreading
 				<TextField {...params} label="Company Name" variant="outlined" />
 			)}
 		/>
