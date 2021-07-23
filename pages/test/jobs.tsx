@@ -6,12 +6,12 @@ import Footer from '../../components/Footer'
 import { IJob } from '../../types/interfaces'
 
 const Jobs: React.FC<{ jobs: Array<IJob> }> = ({ jobs }) => (
-	<div>
-		<Header />
-		<JobsContainer jobs={jobs} />
-		<Footer />
-	</div>
-)
+		<div>
+			<Header />
+			<JobsContainer jobs={jobs} />
+			<Footer />
+		</div>
+	)
 
 export const getStaticProps = async () => {
 	const payload = {

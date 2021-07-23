@@ -10,6 +10,7 @@ import { IJob } from '../../types/interfaces'
 const useStyles = makeStyles({
 	root: {
 		marginBottom: 50,
+		minHeight: 'calc(100vh - 438px)'
 	},
 	hiddenItem: {
 		width: 350,
