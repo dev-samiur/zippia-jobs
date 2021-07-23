@@ -19,8 +19,8 @@ const Search: React.FC<ISearch> = ({ jobs, handleSearch }) => {
 	return (
 		<Autocomplete
 			id="Company Name"
-			options={jobs}
-			getOptionLabel={(option) => option.companyName}
+			options={Array.from(new Set(jobs.map(a => a.companyName))).map(companyName => jobs.find(a => a.companyName === companyName))}
+			getOptionLabel={(option:any) => option.companyName}
 			style={{ width: 250 }}
 			onChange={(event: any, value: any) => handleChange(value)}
 			// eslint-disable-next-line react/jsx-props-no-spreading
